@@ -116,7 +116,7 @@ class VueListeProduits{
         import produit from "$BaseUrl/js/module/produit.js";
         import ui from "$BaseUrl/js/module/ui.js";
         import baseUrlScript from "$BaseUrl/js/module/baseUrlScript.js";
-
+        
         baseUrlScript.setBaseUrl("$BaseUrl");
 
         function inject(){
