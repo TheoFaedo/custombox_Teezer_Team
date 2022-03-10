@@ -3,13 +3,9 @@ namespace custombox\controleurs;
 
 require 'vendor/autoload.php';
 
-use custombox\autres\FonctionsBdd;
+use custombox\vues\VueCreerProduit;
 
-use custombox\vues\VueListeProduits;
-
-use custombox\models\Produit;
-
-class ListeProduitsController {
+class CreerProduitControlleur {
 
     private $container;
 
@@ -20,12 +16,7 @@ class ListeProduitsController {
     }
     
     public function getPage($rq, $rs, $args) {
-
-        $db = FonctionsBdd::creerConnection();
-
-        $produits = Produit::limit(5)->get();
-
-        $v = new VueListeProduits($rq, $produits);
+        $v = new VueCreerProduit($rq);
         $rs->getBody()->write($v->render());
         return $rs;
     }
