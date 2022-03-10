@@ -4,13 +4,14 @@ RewriteEngine On
 # remplacer <login> et <projet> par les valeurs correpsondant à
 # votre cas - par exemple :
 # RewriteBase /www/username0/custumbox/
-RewriteBase /www/<login>/<projet>/
+# RewriteBase /www/faedo2u/custombox/
 
 
 #
 # Pour interdire l'accès aux répertoires contenant du code
 RewriteRule ^sql(/.*|)$ - [NC,F]
 RewriteRule ^src(/.*|)$ - [NC,F]
+RewriteRule ^db.config.ini(/.*|)$ - [NC,F]
 RewriteRule ^vendor(/.*|)$ - [NC,F]
 
 #

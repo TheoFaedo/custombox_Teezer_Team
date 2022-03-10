@@ -15,7 +15,6 @@ class VueAccueil{
     public function render(){
 
         $BaseUrl = $this->rq->getUri()->getBasePath();
-        IntegrateurBdd::integrerNouveauxMorceaux("musique/");
 
 
         $html = <<<END
@@ -24,36 +23,38 @@ class VueAccueil{
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Teezer</title>
-            <link rel="stylesheet" href="css/reset.css">
-            <link rel="stylesheet" href="css/style_MAIN.css">
-            <link rel="stylesheet" href="css/style_index.css">
-            <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+            <title>CustomBox</title>
+            <link rel="stylesheet" href="$BaseUrl/css/reset.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+            <link rel="stylesheet" href="$BaseUrl/css/style_index.css">
         </head>
 
-        <body>
-            <div class="loader">
-                <div class="load"></div>
-                <div class="load"></div>
-                <div class="load"></div>
-            </div>
-            <script src="js/loader.js" charset="utf-8"></script>
-        
-            <section>
 
-            <video muted loop id="bgv">
-                <source src="videos/Backround_video.mp4" type="video/mp4">
-            </video>
-            <script src="js/video.js" charset="utf-8"></script>
+        <body> 
 
-                <div class="box">
-                    <img class="image" src="images/Horizontal_BC.png">
-                    <div class="container">
-                        <div class="btn"><a href="$BaseUrl/creerPartie">Créer une partie</a></div>
+            <div class="container">
+                <h2>Produits</h2>
+                <div class="row">
+                    <a>$BaseUrl/listeProduits</a>
+                    <div class="col-md-3">
+                        <div class="product">
+                            <img src="$BaseUrl/images/categories/1.png">
+                            <div class="overlay">
+                                <button type="button" class="btn btn-secondary" title="Voir plus">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-secondary" title="Ajouter">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+
         </body>
+
         </html>
         END ;
 
