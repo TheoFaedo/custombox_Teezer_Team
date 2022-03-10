@@ -1,4 +1,3 @@
-import produit from "./produit"
 import box from "./box"
 
 class Commande{
@@ -10,11 +9,16 @@ class Commande{
 }
 
 
-function ajouterProduit(produit){
-    box.poids += produit.poids
+function ajouterProduit(prod){
+    box.poids += prod.poids
     if (box.poids <= box.poids_max){
         box.push(produit)
     }else{
-        box.poids -= produit.poids
+        box.poids -= prod.poids
     }
+}
+
+
+export default{
+    ajouterProduit
 }
