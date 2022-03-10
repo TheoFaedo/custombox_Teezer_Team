@@ -3,7 +3,11 @@ namespace custombox\controleurs;
 
 require 'vendor/autoload.php';
 
-use custombox\vues\VueProduits;
+use custombox\autres\FonctionsBdd;
+
+use custombox\vues\VueListeProduits;
+
+use custombox\models\Produit;
 
 class ListeProduitsController {
 
@@ -16,7 +20,12 @@ class ListeProduitsController {
     }
     
     public function getPage($rq, $rs, $args) {
-        $v = new VueProduits($rq);
+
+        $db = FonctionsBdd::creerConnection();
+
+        $produits = Produit::all();
+
+        $v = new VueListeProduits($rq, $produits);
         $rs->getBody()->write($v->render());
         return $rs;
     }
