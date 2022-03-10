@@ -21,7 +21,7 @@ function displayProduct(produit){
             <strong class="bigger" data-type="price">${produit.poids}g</strong>
         </div>
         <div class="details-description">
-            le super produit 1
+            ${produit.description}
         </div>
     </div>`
 
