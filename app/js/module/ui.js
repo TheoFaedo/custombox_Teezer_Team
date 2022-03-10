@@ -10,7 +10,7 @@ function displayProduct(produit){
     let res = ""
     res+=`<div class="product">
         <div class="photo">
-            <img src="../images/categories/${produit.id}.jpg">
+            <img src="../images/categories/${produit.id}.png">
             <a class="product-add2cart">
                 <i class="fa fa-eye"></i>
             </a>

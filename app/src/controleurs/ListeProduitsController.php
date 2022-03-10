@@ -23,7 +23,7 @@ class ListeProduitsController {
 
         $db = FonctionsBdd::creerConnection();
 
-        $produits = Produit::all();
+        $produits = Produit::limit(5)->get();
 
         $v = new VueListeProduits($rq, $produits);
         $rs->getBody()->write($v->render());
