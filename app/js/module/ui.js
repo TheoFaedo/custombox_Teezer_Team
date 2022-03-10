@@ -29,9 +29,6 @@ function displayProduct(produit){
                 </div>
             </div>`
 
-
-
-
     return res;
 }
 
