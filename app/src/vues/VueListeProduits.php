@@ -32,7 +32,7 @@ class VueListeProduits{
         }
 
         
-        
+
         
 
 
@@ -51,20 +51,13 @@ class VueListeProduits{
         <body>
 
             <header>
-                <input type="text" id="product-search" placeholder="Rechercher un produit" />
+                <span class="mdi mdi-magnify">
+                    <input type="text" id="product-search" placeholder="Rechercher un produit" />
+                </span>
                 <img src="$BaseUrl/images/Logos/print-logo-noir-petit.png">
             </header>
 
-            <script type="text/javascript">
-                window.addEventListener("scroll", function(){
-                    var header = document.querySelector("header");
-                    var logo = document.querySelector("header img");
-                    header.classList.toggle("sticky", window.scrollY > 0);
-                    logo.classList.toggle("sticky", window.scrollY > 0);
-                })
-            </script>
 
-            <section class="banner">
             <main>
                 <section id="products-wrapper">
                     <div id="product-list">
@@ -72,7 +65,7 @@ class VueListeProduits{
 
                         <div class="product">
                             <div class="photo">
-                                <img src="">
+                                <img src="$BaseUrl/images/categories/1.png">
                                 <a class="product-add2cart">
                                     <i class="fa fa-eye"></i>
                                 </a>
@@ -90,7 +83,7 @@ class VueListeProduits{
 
                         <div class="product">
                             <div class="photo">
-                                <img src="">
+                                <img src="$BaseUrl/images/categories/2.png">
                                 <a class="product-add2cart">
                                     <i class="fa fa-eye"></i>
                                 </a>
@@ -106,37 +99,52 @@ class VueListeProduits{
                             </div>
                         </div>
 
+
                     </div>
                 </section>
             </main>
-        </section>
 
             <div class="BG">
             </div>
 
 
             <script src="https://kit.fontawesome.com/d4cd47c0a4.js" crossorigin="anonymous"></script>
-            <script type="module">
-                    import produit from "$BaseUrl/js/module/produit.js";
-                    import baseUrlScript from "$BaseUrl/js/module/baseUrlScript.js";
-
-                    baseUrlScript.setBaseUrl("$BaseUrl");
-                    function inject(){
-                        $listeProduits
-                        console.log(produit.products)
-                    }
-                    inject();
-
-                    export default{
-                        inject
-                    }
-                </script>
-                <script type="module" src="$BaseUrl/js/script.js"></script>
-
+        
         </body>
 
+        <script type="module">
+        import produit from "$BaseUrl/js/module/produit.js";
+        import ui from "$BaseUrl/js/module/ui.js";
+        import baseUrlScript from "$BaseUrl/js/module/baseUrlScript.js";
+
+        baseUrlScript.setBaseUrl("$BaseUrl");
+
+        function inject(){
+            $listeProduits
+            console.log(produit.products)
+        }
+        inject();
+
+        export default{
+            inject
+        }
+
+        let enter = document.getElementById("product-search");
+
+        enter.addEventListener("keyup", (e) => {
+            if (e.keyCode === 13){
+                console.log(produit.search(enter.value));
+                ui.buildProductsList(produit.search(enter.value));
+            }
+        });
+
+        
+        </script>
+        <script type="module" src="$BaseUrl/js/script.js"></script>
+
         </html>
-        END;
+        END ;
+
         return $html;
     }
 }
