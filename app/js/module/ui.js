@@ -23,7 +23,7 @@ function displayProduct(produit){
                         <strong class="bigger" data-type="price">${produit.poids}g</strong>
                     </div>
                     <div class="details-description">
-                        <p>catégorie: ${produit.categorie}</p>
+                        <h3>catégorie: ${produit.categorie}</h3><br>
                     ${produit.description}
                     </div>
                 </div>
