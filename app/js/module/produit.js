@@ -1,4 +1,4 @@
-
+let products = [];
 
 class Produit{
 
@@ -11,6 +11,18 @@ class Produit{
         this.image = img
     }
 }
+
+function ajouterProduit(prod){
+    products.push(prod);
+}
+
+export default{
+    Produit,
+    ajouterProduit,
+    products
+}
+
+
 
 
 

@@ -1,4 +1,4 @@
-import box from "./box"
+import box from "./box.js"
 
 class Commande{
 

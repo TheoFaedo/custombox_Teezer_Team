@@ -22,13 +22,12 @@ class VueListeProduits{
 
         foreach ($this->prod as $key => $value) {
             $listeProduits = $listeProduits . <<<END
-            <div class="product-container">
-            <img src="$BaseUrl/images/produits/$value->id.jpg">
-            <h2>$value->titre</h2>
-            <p>catégorie: {$value->categorie()->nom}
-            <p>$value->description</p>
-            <br><br>
-            </div>
+            produit.ajouterProduit({id:$value->id,
+                titre: '$value->titre',
+                description: '$value->description',
+                categorie: '$value->categorie',
+                poids: '$value->poids',
+            });
             END;
         }
 
@@ -55,7 +54,7 @@ class VueListeProduits{
 
             <div class="container">
 
-                $listeProduits
+                
                 <h2>Produits</h2>
                 <div class="row">
                     <div class="col-md-3">
@@ -73,10 +72,16 @@ class VueListeProduits{
                     </div>
                 </div>
             </div>
-
+        
         </body>
 
         </html>
+        <script type="module">
+            import produit from "$BaseUrl/js/module/produit.js"
+            $listeProduits
+            console.log(produit.products)
+        </script>
+        <script type="module" src='$BaseUrl/js/script.js'></script>
         END ;
 
         return $html;

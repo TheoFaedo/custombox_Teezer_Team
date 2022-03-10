@@ -10,7 +10,7 @@ class Categorie extends \Illuminate\Database\Eloquent\Model{
     protected $primaryKey = 'id';
     
     public function produits(){
-        return $this->hasMany('\models\Produit', 'categorie');
+        return $this->hasMany('\models\Produit', 'id');
     }
     
 }

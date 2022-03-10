@@ -1,3 +1,11 @@
-import produit from "./module/produit";
+import produit from "./module/produit.js";
 
-let produit = new produit()
+function init(){
+    console.log(produit.products)
+}
+
+init()
+
+export default{
+    init
+}
