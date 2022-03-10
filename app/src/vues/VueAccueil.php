@@ -1,7 +1,7 @@
 <?php
-namespace teezer\vues;
+namespace custombox\vues;
 
-use teezer\autres\IntegrateurBdd;
+use custombox\autres\IntegrateurBdd;
 
 
 class VueAccueil{

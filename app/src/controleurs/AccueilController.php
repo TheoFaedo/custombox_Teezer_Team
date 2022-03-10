@@ -1,9 +1,9 @@
 <?php
-namespace teezer\controleurs;
+namespace custombox\controleurs;
 
 require 'vendor/autoload.php';
 
-use teezer\vues\VueAccueil;
+use custombox\vues\VueAccueil;
 
 class AccueilController {
 
