@@ -72,7 +72,7 @@ class VueListeProduits{
 
                         <div class="product">
                             <div class="photo">
-                                <img src="app/images/categories/1.png">
+                                <img src="">
                                 <a class="product-add2cart">
                                     <i class="fa fa-eye"></i>
                                 </a>
@@ -90,7 +90,7 @@ class VueListeProduits{
 
                         <div class="product">
                             <div class="photo">
-                                <img src="app/images/categories/2.png">
+                                <img src="">
                                 <a class="product-add2cart">
                                     <i class="fa fa-eye"></i>
                                 </a>
@@ -105,61 +105,6 @@ class VueListeProduits{
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product">
-                            <div class="photo">
-                                <img src="app/images/categories/3.png">
-                                <a class="product-add2cart">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <div class="details-top">
-                                    <strong class="bigger" data-type="ref">#REF1</strong>
-                                    <strong class="bigger" data-type="price">123g</strong>
-                                </div>
-                                <div class="details-description">
-                                    le super produit 1
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product">
-                            <div class="photo">
-                                <img src="app/images/categories/4.png">
-                                <a class="product-add2cart">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <div class="details-top">
-                                    <strong class="bigger" data-type="ref">#REF1</strong>
-                                    <strong class="bigger" data-type="price">123g</strong>
-                                </div>
-                                <div class="details-description">
-                                    le super produit 1
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product">
-                            <div class="photo">
-                                <img src="app/images/categories/5.png">
-                                <a class="product-add2cart">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <div class="details-top">
-                                    <strong class="bigger" data-type="ref">#REF1</strong>
-                                    <strong class="bigger" data-type="price">123g</strong>
-                                </div>
-                                <div class="details-description">
-                                    le super produit 1
-                                </div>
-                            </div>
-                        </div>
-
 
                     </div>
                 </section>
@@ -173,6 +118,9 @@ class VueListeProduits{
             <script src="https://kit.fontawesome.com/d4cd47c0a4.js" crossorigin="anonymous"></script>
             <script type="module">
                     import produit from "$BaseUrl/js/module/produit.js";
+                    import baseUrlScript from "$BaseUrl/js/module/baseUrlScript.js";
+
+                    baseUrlScript.setBaseUrl("$BaseUrl");
                     function inject(){
                         $listeProduits
                         console.log(produit.products)
