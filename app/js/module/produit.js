@@ -19,7 +19,15 @@ function ajouterProduit(prod){
 export default{
     Produit,
     ajouterProduit,
+    search,
     products
+}
+
+function search(keywords){
+    let tableauf = this.products.filter(function (research) {
+        return (research.titre.includes(keywords) || research.description.includes(keywords));
+    });
+    return tableauf;
 }
 
 
