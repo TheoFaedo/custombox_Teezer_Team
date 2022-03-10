@@ -25,7 +25,7 @@ class VueListeProduits{
             produit.ajouterProduit({id: '$value->id',
                 titre: '$value->titre',
                 description: "$value->description",
-                categorie: '$value->categorie',
+                categorie: "{$value->categorie()->nom}",
                 poids: '$value->poids',
             });
             END;
@@ -50,14 +50,21 @@ class VueListeProduits{
 
         <body>
 
-            <header>
-                <span class="mdi mdi-magnify">
-                    <input type="text" id="product-search" placeholder="Rechercher un produit" />
-                </span>
-                <img src="$BaseUrl/images/Logos/print-logo-noir-petit.png">
-            </header>
+        <header>
+            <input type="text" id="product-search" placeholder="Rechercher un produit" />
+            <img src="$BaseUrl/images/Logos/print-logo-noir-petit.png">
+        </header>
 
+        <script type="text/javascript">
+            window.addEventListener("scroll", function(){
+                var header = document.querySelector("header");
+                var logo = document.querySelector("header img");
+                header.classList.toggle("sticky", window.scrollY > 0);
+                logo.classList.toggle("sticky", window.scrollY > 0);
+            })
+        </script>
 
+        <section class="banner">
             <main>
                 <section id="products-wrapper">
                     <div id="product-list">
@@ -65,6 +72,8 @@ class VueListeProduits{
 
                         <div class="product">
                             <div class="photo">
+                                <img class="back" src="$BaseUrl/images/categories/1.png">
+                                <div class="blur"></div>
                                 <img src="$BaseUrl/images/categories/1.png">
                                 <a class="product-add2cart">
                                     <i class="fa fa-eye"></i>
@@ -103,6 +112,7 @@ class VueListeProduits{
                     </div>
                 </section>
             </main>
+        </section>
 
             <div class="BG">
             </div>

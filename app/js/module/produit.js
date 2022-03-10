@@ -25,7 +25,7 @@ export default{
 
 function search(keywords){
     let tableauf = this.products.filter(function (research) {
-        return (research.titre.includes(keywords) || research.description.includes(keywords));
+        return (research.titre.toLowerCase().includes(keywords.toLowerCase()) || research.description.toLowerCase().includes(keywords.toLowerCase()));
     });
     return tableauf;
 }

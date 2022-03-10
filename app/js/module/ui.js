@@ -9,21 +9,27 @@ function displayProduct(produit){
 
     let res = ""
     res+=`
-    <div class="photo">
-        <img src="${baseUrlScript.getBaseUrl()}/images/produits/${produit.id}.jpg">
-        <a class="product-add2cart">
-            <i class="fa fa-eye"></i>
-        </a>
-    </div>
-    <div class="details">
-        <div class="details-top">
-            <strong class="bigger" data-type="ref">${produit.titre}</strong>
-            <strong class="bigger" data-type="price">${produit.poids}g</strong>
-        </div>
-        <div class="details-description">
-            ${produit.description}
-        </div>
-    </div>`
+        <div class="photo">
+            <img class="back" src="${baseUrlScript.getBaseUrl()}/images/produits/${produit.id}.jpg">
+                <div class="blur"></div>
+                    <img src="${baseUrlScript.getBaseUrl()}/images/produits/${produit.id}.jpg">
+                        <a class="product-add2cart">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                </div>
+                <div class="details">
+                    <div class="details-top">
+                        <strong class="bigger" data-type="ref">${produit.titre}</strong>
+                        <strong class="bigger" data-type="price">${produit.poids}g</strong>
+                    </div>
+                    <div class="details-description">
+                        <p>catégorie: ${produit.categorie}</p>
+                    ${produit.description}
+                    </div>
+                </div>
+            </div>`
+
+
 
 
     return res;
