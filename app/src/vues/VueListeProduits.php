@@ -42,7 +42,7 @@ class VueListeProduits{
 
         <head>
             <meta charset="utf-8">
-            <title>TD2</title>
+            <title>CustomBox</title>
             <link rel="stylesheet" href="$BaseUrl/css/reset.css">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
             <link rel="stylesheet" href="$BaseUrl/css/cart.css">
