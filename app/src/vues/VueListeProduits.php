@@ -22,9 +22,9 @@ class VueListeProduits{
 
         foreach ($this->prod as $key => $value) {
             $listeProduits = $listeProduits . <<<END
-            produit.ajouterProduit({id:$value->id,
+            produit.ajouterProduit({id: '$value->id',
                 titre: '$value->titre',
-                description: '$value->description',
+                description: "$value->description",
                 categorie: '$value->categorie',
                 poids: '$value->poids',
             });
@@ -39,49 +39,94 @@ class VueListeProduits{
         $html = <<<END
         <!DOCTYPE html>
         <html lang="fr">
+
         <head>
-            <meta charset="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>CustomBox</title>
+            <meta charset="utf-8">
+            <title>TD2</title>
             <link rel="stylesheet" href="$BaseUrl/css/reset.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
-            <link rel="stylesheet" href="$BaseUrl/css/style_index.css">
+            <link rel="stylesheet" href="$BaseUrl/css/cart.css">
         </head>
 
+        <body>
 
-        <body> 
+            <header>
+                <span class="mdi mdi-magnify">
+                    <input type="text" id="product-search" placeholder="Rechercher un produit" />
+                </span>
+                <img src="$BaseUrl/images/Logos/print-logo-noir-petit.png">
+            </header>
 
-            <div class="container">
 
-                
-                <h2>Produits</h2>
-                <div class="row">
-                    <div class="col-md-3">
+            <main>
+                <section id="products-wrapper">
+                    <div id="product-list">
+                        <!-- zone d'insertion des produits -->
+
                         <div class="product">
-                            <img src="$BaseUrl/images/categories/1.png">
-                            <div class="overlay">
-                                <button type="button" class="btn btn-secondary" title="Voir plus">
+                            <div class="photo">
+                                <img src="$BaseUrl/images/categories/1.png">
+                                <a class="product-add2cart">
                                     <i class="fa fa-eye"></i>
-                                </button>
-                                <button type="button" class="btn btn-secondary" title="Ajouter">
-                                    <i class="fa fa-plus"></i>
-                                </button>
+                                </a>
+                            </div>
+                            <div class="details">
+                                <div class="details-top">
+                                    <strong class="bigger" data-type="ref">#REF1</strong>
+                                    <strong class="bigger" data-type="price">123g</strong>
+                                </div>
+                                <div class="details-description">
+                                    le super produit 1
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        
-        </body>
 
-        </html>
+                        <div class="product">
+                            <div class="photo">
+                                <img src="$BaseUrl/images/categories/2.png">
+                                <a class="product-add2cart">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </div>
+                            <div class="details">
+                                <div class="details-top">
+                                    <strong class="bigger" data-type="ref">#REF1</strong>
+                                    <strong class="bigger" data-type="price">123g</strong>
+                                </div>
+                                <div class="details-description">
+                                    le super produit 1
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+            </main>
+
+            <div class="BG">
+            </div>
+
+
+            <script src="https://kit.fontawesome.com/d4cd47c0a4.js" crossorigin="anonymous"></script>
+
+        </body>
+    
         <script type="module">
-            import produit from "$BaseUrl/js/module/produit.js"
+        import produit from "$BaseUrl/js/module/produit.js";
+        function inject(){
             $listeProduits
             console.log(produit.products)
+        }
+        inject();
+
+        export default{
+            inject
+        }
         </script>
-        <script type="module" src='$BaseUrl/js/script.js'></script>
+        <script type="module" src="$BaseUrl/js/script.js"></script>
+
+        </html>
         END ;
 
         return $html;

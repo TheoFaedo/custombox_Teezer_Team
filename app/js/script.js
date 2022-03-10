@@ -1,10 +1,12 @@
 import produit from "./module/produit.js";
+import ui from "./module/ui.js";
 
 function init(){
-    console.log(produit.products)
+    console.log("a");
+    ui.buildProductsList(produit.products);
 }
 
-init()
+init();
 
 export default{
     init
