@@ -10,9 +10,8 @@ class VueCreerProduit{
     private $rq;
     private $prod;
 
-    public function __construct($rq, $prod){
+    public function __construct($rq){
         $this->rq = $rq;
-        $this->prod = $prod;
     }
 
     public function render(){
