@@ -16,6 +16,6 @@ class Produit extends \Illuminate\Database\Eloquent\Model{
     }
 
     public function categorie(){
-        return $this->belongsTo('custombox\models\Categorie', 'id')->first();
+        return $this->belongsTo('custombox\models\Categorie', 'categorie')->first();
     }
 }
