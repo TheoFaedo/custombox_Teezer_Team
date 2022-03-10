@@ -8,21 +8,20 @@
 function displayProduct(produit){
 
     let res = ""
-    res+=`<div class="product">
-        <div class="photo">
-            <img src="../images/categories/${produit.id}.png">
-            <a class="product-add2cart">
-                <i class="fa fa-eye"></i>
-            </a>
+    res+=`
+    <div class="photo">
+        <img src="../images/produits/${produit.id}.jpg">
+        <a class="product-add2cart">
+            <i class="fa fa-eye"></i>
+        </a>
+    </div>
+    <div class="details">
+        <div class="details-top">
+            <strong class="bigger" data-type="ref">${produit.titre}</strong>
+            <strong class="bigger" data-type="price">${produit.poids}g</strong>
         </div>
-        <div class="details">
-            <div class="details-top">
-                <strong class="bigger" data-type="ref">${produit.titre}</strong>
-                <strong class="bigger" data-type="price">${produit.poids}</strong>
-            </div>
-            <div class="details-description">
-                le super produit 1
-            </div>
+        <div class="details-description">
+            le super produit 1
         </div>
     </div>`
 
