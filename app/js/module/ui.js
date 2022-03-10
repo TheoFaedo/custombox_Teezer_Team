@@ -1,4 +1,4 @@
-
+import baseUrlScript from "./baseUrlScript.js";
 
 /**
  * fonction qui retourne un html représentant un produit
@@ -10,7 +10,7 @@ function displayProduct(produit){
     let res = ""
     res+=`
     <div class="photo">
-        <img src="../images/produits/${produit.id}.jpg">
+        <img src="${baseUrlScript.getBaseUrl()}/images/produits/${produit.id}.jpg">
         <a class="product-add2cart">
             <i class="fa fa-eye"></i>
         </a>
