@@ -6,23 +6,11 @@ class Boite extends \Illuminate\Database\Eloquent\Model{
     
     public $timestamps = false;
 
-    protected $table = 'createur';
-    protected $primaryKey = 'idCreateur';
-    
+    protected $table = 'boite';
+    protected $primaryKey = 'id';
 
-    protected $idCreateur;
-    protected $pseudo;
-    protected $password;
-    protected $email;
-    
-    /*
-    public function liste(){
-        return $this->belongsTo('\models\liste', 'liste_id');
-    }*/
-
-    
-    /*public function parties(){
-        return $this->hasMany('\models\', 'liste_id');
-    }*/
+    public function produits(){
+        return $this->belongsTo('\models\Categorie', 'id');
+    }
     
 }
